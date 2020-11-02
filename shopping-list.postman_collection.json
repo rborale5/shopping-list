@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "c7600c45-43b5-4cad-b525-f70cc2ff2214",
+		"name": "shopping-list",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "shopping list summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"list"
+					]
+				},
+				"description": "This api returns the count of unique items in the shopping list"
+			},
+			"response": []
+		},
+		{
+			"name": "Adding new category in the shopping list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "uuid",
+						"value": "5f8004843ed9b72a34ee67f6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"urlList\": [\n        {\n            \"url\": \"https://d29ctshu25jfop.cloudfront.net/aa/raw.mp4\",\n            \"content_access\": \"public\",\n            \"publish_access\": \"private\",\n            \"partner_cloud_url\": \"https://d29ctshu25jfop.cloudfront.net/aa/raw.mp4\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/list/categories/{{category}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"list",
+						"categories",
+						"{{category}}"
+					]
+				},
+				"description": "This request is used to add new category in the shopping list"
+			},
+			"response": []
+		},
+		{
+			"name": "Adding item in the request,",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "uuid",
+						"value": "5f8004843ed9b72a34ee67f6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"urlList\": [\n        {\n            \"url\": \"https://d29ctshu25jfop.cloudfront.net/aa/raw.mp4\",\n            \"content_access\": \"public\",\n            \"publish_access\": \"private\",\n            \"partner_cloud_url\": \"https://d29ctshu25jfop.cloudfront.net/aa/raw.mp4\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/list/categories/{{category}}}/items/{{item}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"list",
+						"categories",
+						"{{category}}}",
+						"items",
+						"{{item}}"
+					]
+				},
+				"description": "This request is used to add the item in the category"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
